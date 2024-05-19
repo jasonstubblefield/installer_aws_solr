@@ -1,4 +1,4 @@
-# installer_aws_solr_9.1.1
+# installer_aws_solr
 
 This package easily installs Solr on Ubuntu in AWS. It takes a little setup, but will install a production ready Solr in just a few minutes.
 
@@ -38,5 +38,7 @@ Run the terraform installer to spin up the server on EC2.
 `terraform init`
 
 `terraform apply`
+
+Install 
 
 
