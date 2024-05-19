@@ -70,6 +70,8 @@ Destroy your instance. If you are not planning to use this for long term usage m
 
 `terraform destroy`
 
+Confirm your instance has been destroyed in the AWS dashboard.
+
 Now you can have as many basic Solr servers in AWS as you want.
 
 

@@ -24,12 +24,16 @@
   remote_user: ubuntu
   become: true
 
+  vars:
+      solr_version: "9.6.0"
+
   tasks:
   - name: Download Solr Package
     ansible.builtin.get_url:
-      url: https://archive.apache.org/dist/solr/solr/9.6.0/solr-9.6.0.tgz
-      dest: /opt/solr-9.6.0.tgz
+      url: https://archive.apache.org/dist/solr/solr/{{ solr_version }}/solr-{{ solr_version }}.tgz
+      dest: /opt/solr-{{ solr_version }}.tgz
       mode: '0440'
+      checksum: 'sha512:https://archive.apache.org/dist/solr/solr/9.6.0/solr-{{ solr_version }}.tgz.sha512'  # Replace with actual SHA512 checksum
 
   - name: Download Solr Installer
     ansible.builtin.get_url:
@@ -38,12 +42,12 @@
       mode: '0750'
 
   - name: Run install command
-    ansible.builtin.command: "bash ./install_solr_service.sh solr-9.6.0.tgz -n -f"
+    ansible.builtin.command: "bash ./install_solr_service.sh solr-{{ solr_version }}.tgz -n -f"
     args:
       chdir: /opt
 
   - name: Set correct permissions
-    ansible.builtin.command: "chown -R solr:solr /opt/solr-9.6.0"
+    ansible.builtin.command: "chown -R solr:solr /opt/solr-{{ solr_version }}"
     args:
       chdir: /opt
 
