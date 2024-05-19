@@ -10,6 +10,7 @@ Please remember data in Solr should be treated as ephemeral and should also be s
 
 * Ansible
 * Terraform
+* AWS Account & Credentials
 
 ## Installation
 
@@ -17,7 +18,7 @@ Change directory to opt
 
 `cd /opt`
 
-Fetch the package from Github.
+Fetch the installer_aws_solr package from Github.
 
 `git clone https://github.com/jasonstubblefield/installer_aws_solr.git`
 
@@ -29,7 +30,7 @@ Copy the terraform.vars.example file to terraform.vars .
 
 `cp terraform.vars.example terraform.vars`
 
-Edit the terraform.tfvars with your AWS info. Using the defaults will resiult in an error.
+Edit the `terraform.tfvars` with your AWS info. Using the defaults will resiult in an error.
 
 Change the following values:
 
@@ -62,6 +63,14 @@ Use an SSL tunnel to see the Solr dashboard:
 `ssh -i "Solr.pem" ubuntu@ec2-1-2-3-4.compute-1.amazonaws.com -L 8984:localhost:8983`
 
 Visit the Solr dashboard at `http://localhost:8984`
+
+Please note, the reaso I have mapped the report port (8983) to 8984 on the local machine is because you already have Solr running on your local machine on port 8983 ... right? 
+
+Destroy your instance. If you are not planning to use this for long term usage make sure you destroy your server:
+
+`terraform destroy`
+
+Now you can have as many basic Solr servers in AWS as you want.
 
 
 
