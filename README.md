@@ -2,7 +2,7 @@
 
 This package easily installs Solr on Ubuntu in AWS. It takes a little setup, but will install a production ready Solr in just a few minutes.
 
-Solr is installed in single server mode (not cloud). This installation is suitable for a lab or for a website with light traffic.  
+Solr is installed in single server mode (not cloud). This installation is suitable for a lab or for a use case with light to medium traffic.  
 
 Please remember data in Solr should be treated as ephemeral and should also be stored somewhere else.
 
