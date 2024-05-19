@@ -4,7 +4,7 @@ This package easily installs Solr on Ubuntu in AWS. It takes a little setup, but
 
 Solr is installed in single server mode (not cloud). This installation is suitable for a lab or for a website with light traffic.  
 
-Please remember data in solr should be treated as ephemeral and should also be stored somewhere else.
+Please remember data in Solr should be treated as ephemeral and should also be stored somewhere else.
 
 ## Prerequisites
 
@@ -53,11 +53,11 @@ Copy the inventory.example file to inventory.
 
 Update the inventory file with the public IP address from the AWS server you spun up.
 
-Install Solr with Ansible:
+Install Solr with Ansible *this can take 5-10 minutes on smaller instances:
 
 `ansible-playbook -i inventory ./install_solr_ubuntu.yml`
 
-Use an SSL tunnel to see the solr dashboard:
+Use an SSL tunnel to see the Solr dashboard:
 
 `ssh -i "Solr.pem" ubuntu@ec2-1-2-3-4.compute-1.amazonaws.com -L 8984:localhost:8983`
 
