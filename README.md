@@ -64,7 +64,7 @@ Use an SSL tunnel to see the Solr dashboard:
 
 Visit the Solr dashboard at `http://localhost:8984`
 
-Please note, the reason I have mapped the remote port (8983) to 8984 on the local machine is because you already have Solr running on your local machine on port 8983 ... right? 
+Please note, the reason I have mapped the remote port (8983) to 8984 on the local machine is because I already have Solr running on my local machine on port 8983. 
 
 Destroy your instance. If you are not planning to use this for long term usage make sure you destroy your server:
 
